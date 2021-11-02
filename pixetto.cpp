@@ -319,11 +319,11 @@ namespace pixetto {
 		} while (data_buf[0] != PXT_PACKET_START && loop < 300000);
 		
 		if (read_len == 0 || read_len == MICROBIT_NO_DATA) {
-			if (!checkcam()) {
+			/*if (!checkcam()) {
 				uint8_t cmd_buf[5] = {PXT_PACKET_START, 0x05, PXT_CMD_RESET, 0, PXT_PACKET_END};
 				serial->send(cmd_buf, 5, ASYNC);
 				opencam(true);
-			}
+			}*/
 			return false;
 		}
 
