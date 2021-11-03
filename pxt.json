@@ -1,6 +1,6 @@
 {
-    "name": "Pixetto",
-    "version": "1.5.0",
+    "name": "pixetto2",
+    "version": "1.5.1",
     "description": "Pixetto blocks for micro:bit",
     "license": "MIT",
     "dependencies": {

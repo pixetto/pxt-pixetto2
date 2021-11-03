@@ -267,7 +267,7 @@ namespace pixetto {
 		
 		bool ret = false;
 		PinName txn, rxn;
-		uBit.sleep(6000);
+		uBit.sleep(10000);
 		
 		if (getPinName(tx, txn) && getPinName(rx, rxn))
 		{
@@ -316,14 +316,14 @@ namespace pixetto {
 		do {
 			read_len = serial->read(data_buf, 1, ASYNC);
 			loop++;
-		} while (data_buf[0] != PXT_PACKET_START && loop < 300000);
+		} while (data_buf[0] != PXT_PACKET_START && loop < 500000);
 		
 		if (read_len == 0 || read_len == MICROBIT_NO_DATA) {
-			/*if (!checkcam()) {
+			if (!checkcam()) {
 				uint8_t cmd_buf[5] = {PXT_PACKET_START, 0x05, PXT_CMD_RESET, 0, PXT_PACKET_END};
 				serial->send(cmd_buf, 5, ASYNC);
 				opencam(true);
-			}*/
+			}
 			return false;
 		}
 
